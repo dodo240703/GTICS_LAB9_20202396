@@ -74,7 +74,10 @@
     </ul>
 
     <div class=" mb-3">
-        <a th:href="'/coctel/lista'" class="btn btn-primary" >
+        <a th:if="${!isFavorite}" th:href="'/coctel/lista'" class="btn btn-primary" >
+            Volver
+        </a>
+        <a th:if="${isFavorite}" th:href="'/coctel/listarFavoritos'" class="btn btn-primary" >
             Volver
         </a>
     </div>
