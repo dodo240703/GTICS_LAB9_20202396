@@ -2,24 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de cocteles</title>
+    <title>Lista de cocteles favoritos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
 <body>
-<h1 class="text-center">TELEDRINK</h1>
-<div class="text-center mb-3">
-    <a th:href="'/coctel/listarFavoritos'" class="btn btn-primary" >
-        List my favorite drinks
-    </a>
-</div>
+<h1 class="text-center">My Favorite Drinks</h1>
 <div class="container">
     <div class="row">
         <div th:each="coctel : ${cocteles}" class="col-md-4 mb-4">
             <div class="card">
-                <img th:src="${coctel.strDrinkThumb}" class="card-img-top" alt="...">
+                <img th:src="${coctel.thumbnail}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title" ><a th:href="'/coctel/detail/' + ${coctel.getIdDrink()}" th:text="${coctel.strDrink}"></a></h5>
+                    <h5 class="card-title" ><a th:href="'/coctel/detail/' + ${coctel.favoriteCocktailsId}" th:text="${coctel.name}"></a></h5>
                 </div>
             </div>
         </div>

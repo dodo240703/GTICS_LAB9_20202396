@@ -56,6 +56,9 @@ public class CoctelController {
         return "redirect:/coctel/detail/" + cocktailId;
     }
 
-    
-
+    @GetMapping("/listarFavoritos")
+    public String getCocktailFavoriteList(Model model) {
+        model.addAttribute("cocteles", favoritecocktailRepository.findAll());
+        return "listaCoctelesFavoritos";
+    }
 }
